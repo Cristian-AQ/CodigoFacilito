@@ -1,6 +1,7 @@
 #FUENTE
 https://www.youtube.com/watch?v=7KoGJdGgwxk
 https://j2logo.com/virtualenv-pip-librerias-python/
+https://www.youtube.com/watch?v=N9PdRkXOQ4w&t=9s
 #COMADOS
 --instalar
 pip install virtualenv
