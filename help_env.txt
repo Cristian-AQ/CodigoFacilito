@@ -1,1 +1,13 @@
+#FUENTE
+https://www.youtube.com/watch?v=7KoGJdGgwxk
 https://j2logo.com/virtualenv-pip-librerias-python/
+#COMADOS
+--instalar
+pip install virtualenv
+--crear env
+python -m venv (path donde se guardara)\(nombre de carpeta)
+--activar
+(ubicacion de carpeta)>Scripts\activate
+en VScode se activa solo (mi caso)
+--crear un fiche (sirve para saber lo q esta instalado)
+pip freezer > (nombre del txt)
