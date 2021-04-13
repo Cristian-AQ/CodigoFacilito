@@ -8,7 +8,7 @@ bgr = cv2.imread('img\Mangekyou.png')
 C1 = bgr[:,:,0]#muestra color en pantalla
 C2 = bgr[:,:,1]
 C3 = bgr[:,:,2]
-cv2.imshow('BGR',np.hstack([C1,C2,C3]))
+cv2.imshow('BGR',np.hstack([C1,C2,C3]))#permite ver la imagen en secciones
 #CONVERTIR A RGB
 rgb=cv2.cvtColor(bgr,cv2.COLOR_BGR2RGB)
 
