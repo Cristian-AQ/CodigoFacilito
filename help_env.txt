@@ -11,4 +11,4 @@ python -m venv (path donde se guardara)\(nombre de carpeta)
 (ubicacion de carpeta)>Scripts\activate
 en VScode se activa solo (mi caso)
 --crear un fiche (sirve para saber lo q esta instalado)
-pip freezer > (nombre del txt)
+pip freeze > (nombre del txt)
