@@ -5,7 +5,7 @@ imagen = 255*np.ones((400,600,3),dtype=np.uint8)#imagen blanco
 
 #linea
 cv2.line(imagen,(0,0),(600,400),(0,255,0),3)
-#rectangulo
+#rectangulo p1(esquina_superior_izquierdo) p2(esquina_inferior_derecha)
 cv2.rectangle(imagen,(10,10),(400,300),(0,255,0),3)
 #circulo
 cv2.circle(imagen,(300,200),100,(0,255,0),3)#valor de -1 llena el circulo
