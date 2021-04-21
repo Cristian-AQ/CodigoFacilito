@@ -4,14 +4,16 @@ import os
 import imutils
 
 personaName = 'isabel'
-dataPath = 'C:/Users/51927/Desktop/caras'
-personaPath = dataPath+'/'+personaName
+dataPath = 'caras/'
+facePath = dataPath+'caras_video'
+#dataPath = 'C:/Users/51927/Desktop/caras'
+personaPath = facePath+'/'+personaName
 
 if not os.path.exists(personaName):
-    print('Carpeta Creada'+personaName)
+    print('Carpeta Creada '+personaName)
     os.mkdir(personaPath)
 
-video = cv2.VideoCapture(personaPath+'.mp4')
+video = cv2.VideoCapture(dataPath+personaName+'.mp4')
 
 faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_frontalface_default.xml')
 

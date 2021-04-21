@@ -1,7 +1,8 @@
 import cv2
 import os
 
-dataPath = 'C:/Users/51927/Desktop/caras/caras_video'
+#dataPath = 'C:/Users/51927/Desktop/caras/caras_video'
+dataPath = 'caras/caras_video'
 peopleList = os.listdir(dataPath)
 print(peopleList)
 
@@ -11,9 +12,11 @@ face_recognizer = cv2.face.FisherFaceRecognizer_create()
 face_recognizer = cv2.face.LBPHFaceRecognizer_create()
 
 #leemos el archivo xml o yaml que creamos de acorde al modelo utilizado
-face_recognizer.read('modeloFace.xml')
+face_recognizer.read('caras/modelos/modeloFace.xml')
 
-video = cv2.VideoCapture('C:/Users/51927/Desktop/caras/nicole.mp4')
+#video = cv2.VideoCapture('C:/Users/51927/Desktop/caras/nicole.mp4')
+video = cv2.VideoCapture('caras/isabel.mp4')
+
 
 faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_frontalface_default.xml')
 

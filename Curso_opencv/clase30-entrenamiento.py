@@ -2,7 +2,8 @@ import cv2
 import os
 import numpy as np
 #esta parte nos muestra todos los archivos dentro de dataPath
-dataPath = 'C:/Users/51927/Desktop/caras/caras_video'
+#dataPath = 'C:/Users/51927/Desktop/caras/caras_video'
+dataPath = 'caras/caras_video'
 peopleList = os.listdir(dataPath)
 print(peopleList)
 
@@ -35,6 +36,6 @@ face_recognizer.train(faceData,np.array(labels))
 
 #almacenamiento del entrenamiento puede ser en xml o yaml
 #especificar la ruta, sino se creara donde se encuentra el script
-face_recognizer.write('modeloFace.xml')
+face_recognizer.write('caras/modelos/modeloFace.xml')
 print('modelo almacenado...')
 

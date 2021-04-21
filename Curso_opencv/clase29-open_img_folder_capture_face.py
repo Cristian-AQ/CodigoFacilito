@@ -1,7 +1,8 @@
 import cv2
 import os#ayuda a listar archivos, crearlos, ect
 
-imagenesPath = 'C:/Users/51927/Desktop/caras'#guardamos la ruta del folder; despues de : va /
+#imagenesPath = 'C:/Users/51927/Desktop/caras'#guardamos la ruta del folder; despues de : va /
+imagenesPath = 'caras/caras_img'
 imagenesPathList = os.listdir(imagenesPath)#listamos el contenido de la ruta
 print(imagenesPathList)
 
@@ -9,7 +10,7 @@ print(imagenesPathList)
 
 if not os.path.exists('Rostros Encontrados'):
     print('Carpeta creada: Rostros Encontrados')
-    os.mkdir('C:/Users/51927/Desktop/Rostros Encontrados')#especificar ruta y nombre de la carpeta, por defecto se crea en la ubicacion del Script
+    os.mkdir('caras/caras_img/Rostros Encontrados')#especificar ruta y nombre de la carpeta, por defecto se crea en la ubicacion del Script
 
 faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_frontalface_default.xml')
 
@@ -41,7 +42,7 @@ for imagen in imagenesPathList:
             rostro = imgAux[y:y+h,x:x+w]#cortando la imagen
             rostro = cv2.resize(rostro,(60,60))
             #cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),2)
-            cv2.imwrite(f'C:/Users/51927/Desktop/Rostros Encontrados/captura{cont}.jpg',rostro)
+            cv2.imwrite(f'caras/caras_img/Rostros Encontrados/captura{cont}.jpg',rostro)
             cont = cont + 1
             cv2.imshow('ROSTRO',rostro)
             cv2.waitKey(0)
