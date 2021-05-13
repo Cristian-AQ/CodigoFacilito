@@ -6,4 +6,4 @@ app = Flask(__name__)#nuevo objeto
 def index():#funcion
  return 'hola mundo'#regresar un string
 
-app.run()#se encarga de ejecutar el servidor 5000
+app.run(debug=True)#se encarga de ejecutar el servidor 5000, el debug en true permite ver los cambios inmediatamente
