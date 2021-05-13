@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}<!-- coloca todo el contenido del html base en toda esta seccion -->
+{% block title %} 
+	{{ title }}
+{% endblock %}
+
+{% block content %}
+	<p>Esto es parte del index</p>
+	<p> {{ name }}</p>
+	{% from "_macro.html" import show_list_h %}
+	{{ show_list_h('coment') }}
+
+	{% from "_macro.html" import render_field %}
+
+	<form>
+		{{ render_field(form.username) }}
+	</form>
+
+
+{% endblock %}

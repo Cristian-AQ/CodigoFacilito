@@ -1,0 +1,127 @@
+<!DOCTYPE HTML><!--doctype reconoce el navegador como html5-->
+<html lang = "es-ES"><!--lenguaje de nuestra pagina-->
+
+<head>
+	<meta charset = "iso-8559-1"/>
+	<meta name = "description" content = "pagina de ensenanza"/><!--descripcion-->
+	<meta name = "keywords" content = "html5, css"/><!--palabras claves-->
+	<title> HOLA </title>
+
+	<link rel="stylesheet" href="miarchivo.css"/>
+
+	<style>
+		#principal{
+			width: 500px;/*longitud del header*/
+			/*background-color: #00F;*/
+			background: -moz-linear-gradient(top, #00F 25%, #3FF 75%);/*degradado segun el tipo de navegador moz, webkit para chrone*/
+			text-align: center;/*para centrar el texto dentro del header*/
+			margin: 15px auto;/*centra el header sin importar la resolucion o ancho de la pantalla*/
+			padding: 15px;/*el header queda a 15px en todo su contorno*/
+			border: 3px solid #FF0000;/*borde tipo solido color rojo*/
+			border-radius: 15px;/*redondear esquinas, si queremos en especifo color todas las medidas*/
+			box-shadow: #808080 5px 5px 5px;/*sombra el tercer parametro es para la difuminacion de la sombra*/
+			/*outline: 3px dashed #00F;/*grosor de las linas de borde externo*/
+			/*outline-offset: 15px;/*alejar el borde de la caja*/
+			/*-moz-transform: scale(.5);/*reducir o aumentar en tamaño de la caja; tener en cuenta los espacios*/
+			/*-moz-transform: rotate(700deg);/*rotar la caja*/
+			/*-moz-transform: skew(25deg);/*cambia rperspectiva*/
+			-moz-transition: -moz-transform 1s ease 0.5s;/*transicion de la caja*/
+		}
+		#principal:hover{/*pseudo clse para rotar la caja cuando pasa el mouse por encima*/
+			-moz-transform: rotate(25deg);
+		}
+		@font-face{/*colocar fuente no muy comunes*/
+			font-family: 'mifuente';
+			src: url('Belove.otf');/*no olvidar agregar la extension de la fuente*/
+		}
+		#titulo{
+			font: bold 36px 'mifuente';/*letra negrita, tamaño: 36, Verdana y */
+			text-shadow: #FF0000 3px 3px 5px;/*borde para el texto*/
+			color: rgba(0,0,0,0.2);/*el tercer termino es para la transparencia en decimales*/
+		}
+	</style>
+</head>
+<body>
+	<!--<h1>{{ name }}</h1>
+	<h2>{{ age }}</h2>
+	{% if age > 15 %}
+		<p> es mayor de edad. </p>
+	{% endif %}
+
+	{% for item in list %}
+		<p>{{ item }}</p>
+	{% endfor %}
+-->
+	<header id="principal">
+	<span id="titulo">Estilos Css3</span>
+	</header>
+
+	<header id="header1"><h1>Esta es la cabecera</h1><!--la etiqueta "h" categoriza la pag. web-->
+	</header><!--el header es para que no se pierda formato en un mobil-->
+	<nav>
+		<ul>
+			<li>Inicio</li><!--para cada elemento de la barra de navegacion-->
+			<li>Mision</li><!--para cada elemento de la barra de navegacion-->
+			<li>Vision</li><!--para cada elemento de la barra de navegacion-->
+			<li>Registro</li><!--para cada elemento de la barra de navegacion-->
+			
+		</ul><!--construir lista desordenada-->
+		
+	</nav><!--etiqueta de navegacion-->
+	<aside>
+		<blockquote>Primer Elemento</blockquote><!--etiqueta para largas citas-->
+		<blockquote>Segundo Elemento</blockquote>
+		<blockquote>Tercer Elemento</blockquote>
+	</aside><!--etiqueta de barra lateral-->
+	<section>
+		<article>
+			<header id="header2">
+				<hgroup>
+					<h2>Titulo de Noticia 1</h2>
+					<h3>Subtitulo de Noticia 1</h3>
+				</hgroup>
+			</header>
+
+			<figure id="imagen1">
+				<img src="C:\Users\51927\Desktop\Practicando Web\maxresdefault1.jpg"/><!--ruta de la imagen, si esta en el escritorio solo el nombre y la extencion, es recomendable usar imagenes comprimidas como jpg, gif, png; la imagen aparecera con el tamaño en que fue guardada-->
+			</figure><!--insertar imagenes, videos, flash-->
+			<figcaption><h4>fig.dinastia pokemon</h4></figcaption><!--colocar nombre de la imagen-->
+
+			<hgroup id="group1">
+				<p>Noticia 1</p><!--etiqueta de parrafo-->
+				<p>Inicio Noticia 1</p>
+				<p>Fin Noticia 1</p>
+			</hgroup>
+
+			<footer>Comentarios Noticia 1</footer>
+
+		</article><!--agrupar elementos similares-->
+
+		<article>
+			<header id="header3">
+				<hgroup>
+					<h2>Titulo Noticia 2</h2>
+					<h3>Subtitulo de Noticia 2</h3>
+				</hgroup>
+			</header>
+
+			<hgroup id="group2">
+
+				<p>Noticia 2</p>
+				<p>Inicio Noticia 2</p>
+				<p>Fin Noticia 2</p>
+			</hgroup>
+
+			<footer>Comentarios Noticia 2</footer>
+
+		</article>
+		
+	</section><!--etiqueta de contenido principal-->
+
+	<footer><small>
+		Derechos Reservados
+	</small><!--small para textos legales--></footer><!--etiqueta de pie-->
+
+</body>
+
+</html>
