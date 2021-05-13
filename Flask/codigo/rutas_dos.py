@@ -13,9 +13,9 @@ def saluda():
 @app.route('/params/')
 @app.route('/params/<name>/')
 @app.route('/params/<name>/<last_name>')
-@app.route('/params/<name>/<last_name>/<int:edad>')
+@app.route('/params/<name>/<last_name>/<float:edad>')#int permite recibir solamente numeros enteros
 def params(name='valor por default', last_name='nada',edad='nada'):
-	return 'El parametro es : {} {} {}'.format(name, last_name, edad)
+	return f'El parametro es : {name} {last_name} {edad}'
 
 if __name__ == '__main__':
 	app.run(debug = True, port = 8000)
