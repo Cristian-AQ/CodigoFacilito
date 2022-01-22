@@ -1,0 +1,77 @@
+from fastapi import FastAPI
+from enum import Enum
+from pydantic import BaseModel
+from typing import List, Optional
+from config.db import conn
+from models.model import countries,departments,employees,job_history,jobs,locations,regions
+
+app = FastAPI()
+
+class ModelName(str,Enum):
+    alexnet = 'alexnet',
+    resnet = 'resnet',
+    lesnet = 'lesnet'
+
+class Item(BaseModel):
+    name: str
+    description: Optional[str] = None
+    price: float
+    tax: Optional[float] = None
+
+    class Config:
+        schema_extra={
+            'example':{
+                'name':'Foo',
+                'description':'A very nice Item',
+                'price':35.4,
+                'tax':3.2
+            }
+        }
+
+class User(BaseModel):
+    username: str
+    full_name: Optional[str] = None
+    tags: Optional[List[Item]] = None
+
+#login
+class UserIn(BaseModel):
+    username: str
+    password: str
+    email: str
+    full_name: Optional[str]=None
+
+class UserOut(BaseModel):
+    username: str
+    email: str
+    full_name: Optional[str]=None
+
+value = list()
+
+@app.get('/index/name')
+def user():
+    name = []
+    for x in value:
+        busq = x['item']
+        if busq.price ==1:
+            name.append(x)
+    return name
+
+@app.get('/index/{name}')
+def home(name:str):
+    if name == ModelName.alexnet:
+        return {"model name":name,"message":'Deep Learning FTW'}
+    if name == ModelName.resnet:
+        return {"model name":name,"message":'LeCNN all the images'}
+    if name == ModelName.lesnet:
+        return {"model name":name,"message":'Have some residuals'}   
+
+@app.post('/items/{item_id}')
+def item(item_id:int, item:Item):    
+    result = {"item_id":item_id,"item":item}
+    value.append(result)
+    print(value)
+    return result
+
+@app.post('/user/',response_model=UserOut)
+def create_user(user:UserIn):
+    return user

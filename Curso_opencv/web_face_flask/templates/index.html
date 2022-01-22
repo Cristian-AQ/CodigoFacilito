@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+    <title>Document</title>
+</head>
+<body class="container">
+    <h1>STREAMING</h1>
+    <div class="content">
+        <img src="{{ url_for('videoFace') }}">
+        <form method="post" action="/storage" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="name">
+            <input type="submit" class="boton">
+        </form>
+        <!-- <img src="{{ url_for('detectedFace') }}"> -->
+        
+    </div>
+    <script src="{{ url_for('static',filename='js/index.js') }}"></script>
+</body>
+</html>
